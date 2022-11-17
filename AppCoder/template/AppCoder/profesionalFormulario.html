@@ -1,0 +1,37 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% load static %} 
+
+
+{% block contenidoQueCambia %} 
+
+<h3> Formulario de Contactos</h3>
+
+{% endblock %} 
+
+{% block section_name %}
+
+<form action="{% url 'profesionalFormulario'  %}" method="POST">{% csrf_token %}
+    <h8>Ingrese los datos del Profesional:</h8>
+    <br><br/>
+    <table>
+    {{miFormulario.as_table}}
+    </table>
+    <input type="submit" value="Enviar Formulario">
+
+</form>
+
+<br>
+<br>
+<br>
+
+<form action="{% url 'buscarProfesional'  %}" method="GET">
+    <h3>Busqueda de Contactos</h3>
+    <br>
+    <h8>Ingrese el nombre del Profesional a buscar:</h8>
+    <br><br/>
+    <input type="text" name="nombre" placeholder="NOMBRE" id="nombre">
+    <input type="submit" value="Buscar">
+
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% load static %} 
+
+
+{% block contenidoQueCambia %} 
+
+<h3> Formulario de Sectores </h3>
+
+{% endblock %} 
+
+{% block section_name %}
+
+<form action="{% url 'sectoresFormulario'  %}" method="POST">{% csrf_token %}
+    <h8>Ingrese los datos del Sector:</h8>
+    <br><br/>
+    <table>
+    {{miFormulario.as_table}}
+    </table>
+    <input type="submit" value="Enviar Formulario">
+
+</form>
+
+<br>
+<br>
+<br>
+
+<form action="{% url 'buscar'  %}" method="GET">
+    <h3>Busqueda de sectores</h3>
+    <br>
+    <h8>Ingrese el sector a buscar:</h8>
+    <br><br/>
+    <input type="text" name="sector" placeholder="SECTOR" id="sector">
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% endblock %}

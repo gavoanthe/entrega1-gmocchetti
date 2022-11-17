@@ -1,0 +1,22 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% load static %} 
+
+
+{% block contenidoQueCambia %} 
+
+<h3> Buscador de Sectores </h3>
+
+{% endblock %} 
+
+{% block section_name %}
+
+<form action="{% url 'buscar'  %}" method="GET">
+    <h8>Ingrese los datos del sector a buscar:</h8>
+    <br><br/>
+    <input type="text" name="sector" placeholder="SECTOR" id="sector">
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% endblock %}

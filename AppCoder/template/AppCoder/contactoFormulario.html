@@ -1,0 +1,38 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% load static %} 
+
+
+{% block contenidoQueCambia %} 
+
+<h3> Formulario de Contactos</h3>
+
+{% endblock %} 
+
+{% block section_name %}
+
+<form action="{% url 'contactoFormulario'  %}" method="POST">{% csrf_token %}
+    <h8>Ingrese los datos del Sector:</h8>
+    <br><br/>
+    <table>
+    {{miFormulario.as_table}}
+    </table>
+    <input type="submit" value="Enviar Formulario">
+
+</form>
+
+<br>
+<br>
+<br>
+
+<form action="{% url 'buscarContacto'  %}" method="GET">
+    <h3>Busqueda de Contactos</h3>
+    <br>
+    <h8>Ingrese la localidad a buscar:</h8>
+    <br><br/>
+    <input type="text" name="localidad" placeholder="LOCALIDAD" id="localidad">
+    <input type="submit" value="Buscar">
+
+</form>
+{% endblock %}
+

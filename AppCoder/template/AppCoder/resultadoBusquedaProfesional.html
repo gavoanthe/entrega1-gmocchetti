@@ -1,0 +1,31 @@
+{% extends "AppCoder/padre.html" %} 
+
+{% load static %} 
+
+
+{% block contenidoQueCambia %} 
+
+<h3> Resultado de su busqueda </h3>
+
+{% endblock %} 
+
+{% block section_name %}
+
+<h4> Estamos buscando al Profesional: {{nombre}}</h4>
+
+{% if nombres %} 
+
+<ul>
+
+    {% for nombre in nombres %}
+    <li>{{nombre.nombre}}</li>
+    <li>{{nombre.apellido}}</li>
+    <li>{{nombre.email}}</li>
+    <br>
+    {% endfor %}
+
+</ul>
+
+
+{% endif %}
+{% endblock %}
